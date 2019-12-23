@@ -12,7 +12,7 @@
     @component('components.breadcrumbs')
         <a href="/">Главная</a>
         <i class="fa fa-chevron-right breadcrumb-separator"></i>
-        <span>Продукты</span>
+        <span><a href="/shop">Продукты</a></span>
     @endcomponent
 
     <div class="container">
@@ -58,11 +58,11 @@
         </div> <!-- end sidebar -->
         <div>
             <div class="products-header">
-                <h1 class="stylish-heading">Популярные товары</h1>
+                <h1 class="stylish-heading"><a href="/shop">Популярные товары</h1>
                 <div>
-                    <strong>Цена: </strong>
-                    <a href="{{ route('shop.index', ['category'=> request()->category, 'sort' => 'low_high']) }}">Сначала дешевые</a> |
-                    <a href="{{ route('shop.index', ['category'=> request()->category, 'sort' => 'high_low']) }}">Сначала дорогие</a>
+                    <strong>Сортировка: </strong>
+                    <a href="{{ route('shop.index', ['category'=> request()->category, 'sort' => 'low_high']) }}">По возрастанию</a> |
+                    <a href="{{ route('shop.index', ['category'=> request()->category, 'sort' => 'high_low']) }}">По убыванию</a>
 
                 </div>
             </div>
@@ -70,11 +70,11 @@
             <div class="products text-center">
                 @forelse ($products as $product)
                     <div class="product">
-                        <a href="{{ route('shop.show', $product->slug) }}"><img src="{{ productImage($product->image) }}" alt="product"></a>
+                        <a href="{{ route('shop.show', $product->slug) }}"><img src="{{ productImage($product->image) }}" width="200" height="200" alt="product"></a>
                         <a href="{{ route('shop.show', $product->slug) }}"><div class="product-name">{{ $product->name }}</div></a>
                         <div class="product-price">{{ $product->presentPrice() }}</div>
                     </div>
-                @empty
+                @empty 
                     <div style="text-align: left">Товары отсутсвуют</div>
                 @endforelse
             </div> <!-- end products -->

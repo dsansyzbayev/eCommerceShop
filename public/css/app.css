@@ -148,12 +148,13 @@ html {
 .filter {
   padding: 15px;
   background: white;
-  width: 200px;
+  width: 250px;
   box-shadow: 2px 2px 8px rgba(0,0,0,.1);
-  font-family: "Montserrat", Arial, sans-serif;;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-weight: 900;
 }
 .filter h3 {
-  font-size: 16px;
+  font-size: 20px;
   color: rgba(0,0,0,.6);
   margin: 0 0 10px;
   padding: 0 5px;
@@ -174,8 +175,10 @@ html {
   margin: 0;
   padding: 0; 
   border-top: 1px solid rgba(0,0,0,.3);
+  border-bottom: 1px solid rgba(0, 0,0,.3);
 }
-.filter li {margin: 12px 0 0 0px;}
+.filter li { margin: 15px 0 0 0px;}
+
 .filter a {
   text-decoration: none;
   display: block;  
@@ -1092,7 +1095,8 @@ footer {
 }
 
 .products-section .sidebar li.active {
-  font-weight: 500;
+  font-weight: 900;
+  background-color: #97b1e678;
 }
 
 .products-section .products {
