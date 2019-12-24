@@ -57,7 +57,6 @@
                     Насосы под торговой маркой SEAKOO завоевали доверие и поддержку со стороны клиентов во многих странах.</p>
                     <div class="text-center button-container">
                         <a href="/shop" class="button">Популярные</a>
-                        <a href="/shop" class="button">On Sale</a>
                     </div>
 
                     {{-- <div class="tabs">
@@ -72,7 +71,7 @@
                     <div class="products text-center">
                         @foreach ($products as $product)
                             <div class="product">
-                                <a href="{{ route('shop.show', $product->slug) }}"><img src="{{ productImage($product->image) }}" alt="product"></a>
+                                <a href="{{ route('shop.show', $product->slug) }}"><img src="{{ productImage($product->image) }}" width="200" height="200" alt="product"></a>
                                 <a href="{{ route('shop.show', $product->slug) }}"><div class="product-name">{{ $product->name }}</div></a>
                                 <div class="product-price">{{ $product->presentPrice() }}</div>
                             </div>
